@@ -1,0 +1,140 @@
+/* Global Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hwb(0 12% 49% / 0.394); /* Dark chocolate color */
+}
+
+/* Game Menu */
+#gameMenu {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+#gameMenu button {
+  font-size: 70px;
+  padding: 20px 40px;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5, #42a5f5);
+  background-size: 300% 300%;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  animation: gradientBG 3s ease infinite, buttonPress 0.2s;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease;
+}
+
+#gameMenu button:hover {
+  transform: scale(1.1);
+}
+
+#gameMenu button:active {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Game Over Popup */
+#gameOverPopup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(145deg, #1e1e1e, #3e3e3e);
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6), -10px -10px 20px rgba(255, 255, 255, 0.1);
+  z-index: 20;
+  animation: popupAnimation 0.5s ease-out;
+}
+
+#gameOverPopup p {
+  margin: 10px 0;
+  font-size: 24px;
+  color: #FFD700;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+#popupRetryButton, #popupPlayAgainButton {
+  font-size: 18px;
+  margin: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5, #42a5f5);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+#popupRetryButton:hover, #popupPlayAgainButton:hover {
+  transform: scale(1.1);
+}
+
+#popupRetryButton:active, #popupPlayAgainButton:active {
+  transform: scale(1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes popupAnimation {
+  0% { transform: translate(-50%, -60%) scale(0.8); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* Game Canvas */
+#flappyBird {
+  display: block;
+  background-color: #3e2723; /* Matches dark chocolate background */
+}
+
+/* Score and High Score Text */
+.score-text, .high-score-text {
+  position: absolute;
+  top: 20px;
+  font-size: 24px;
+  color: #FFD700;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7), -5px -5px 10px rgba(255, 255, 255, 0.3);
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transform: perspective(500px) rotateX(10deg);
+}
+
+.score-text {
+  left: 20px;
+}
+
+.high-score-text {
+  left: 20px;
+  top: 60px;
+}
+
+/* Adding 3D Shadow and Effects */
+.score-text, .high-score-text {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8), 0 10px 20px rgba(0, 0, 0, 0.6);
+  transform: perspective(400px) rotateX(10deg);
+}
+
+
+
