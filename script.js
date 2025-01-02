@@ -66,8 +66,8 @@ pipeImage.src = "images/pipe.png"; // Local pipe image
 // Pipe properties and methods
 const pipes = [];
 const pipeWidth = 50;
-const pipeGap = 220;
-let pipeSpeed = 3;
+const pipeGap = 225;
+let pipeSpeed = 5;
 let frameCount = 0;
 let score = 0;
 let highScore = localStorage.getItem('highScore') || 0;
